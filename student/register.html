@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Welcome!</h1>
+<body>
+    <form action="process_register.php" method="post" id="form">
+        <label for="name">Full Name: </label>
+        <input type="text" class="fname" name="Fname" required>
+        <br>
+        <label for="Specialization">Specialization</label>
+        <select name="Specialization" id="Specialization" required>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Business Administration">Business Administration</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+        </select>
+        <br>
+        <label for="email">Email: </label>
+        <input type="text" id="Email" name="Email" placeholder="example@gmail.com" required>
+        <br>
+        <label for="Password">Password: </label>
+        <input type="password" id="Password" name="Password" placeholder="********" required>
+        <p>Password must contains at least 8 characters</p>
+        <label for="phone">Phone no:</label>
+        <input type="number" class="number" id="Number" name="Number" required>
+        <br>
+        <label for="Gender">Gender: </label>
+        <select name="Gender" id="Gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br>
+        <label for="Address">Address: </label>
+        <input type="text" class="Address" name="Address" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById('form').addEventListener('submit', function(event){
+            let Email = document.getElementById("Email").value;
+            if(!Email.includes("@gmail.com")){
+                alert ("Please input a valid Email!!!");
+                event.preventDefault();
+            }
+            let Password = document.getElementById("Password").value;
+            if(Password.length < 8){
+                alert ("Make sure password contains 8 characters or above");
+                event.preventDefault();
+            }
+            let Number = document.getElementById("Number").value;
+            if (Number.length < 11) {
+                alert ("Please Input a valid number");
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>
