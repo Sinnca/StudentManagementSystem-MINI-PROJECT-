@@ -18,7 +18,7 @@ require_once '../config/db.php';
         $sql = "SELECT * FROM students WHERE email = '$Email'";
         $result = mysqli_query($conn, $sql);
 
-        if ($result && mysqli_affected_rows($conn) === 1){
+        if ($result && mysqli_num_rows($conn) === 1){
             echo "Your Input Email have account. Please try another Email";
         } else {
         $sql = "INSERT INTO students (full_name, email, password, phone, specialization, gender, address) 

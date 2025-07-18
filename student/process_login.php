@@ -22,7 +22,7 @@ require_once '../config/db.php';
             $_SESSION['phone'] = $user_data['phone'];
             $_SESSION['gender'] = $user_data['gender'];
             $_SESSION['address'] = $user_data['address'];
-            header("Location: /LoginSystem/Consultant/c_index.php");
+            header("Location: /StudentSystem/student/profile.php");
             exit;
         } else {
             echo "Incorrect Password";
